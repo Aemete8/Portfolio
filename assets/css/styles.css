@@ -422,10 +422,10 @@
         display: none;
     }
 
-    /* =============================================
-   SECCIÓN: HERO
-   Primera sección visible, con animación typewriter
-   en el nombre y tagline.
+/* =============================================
+    SECCIÓN: HERO
+    Primera sección visible, con animación typewriter
+    en el nombre y tagline.
 ============================================= */
     .hero {
         min-height: 100svh;
@@ -509,8 +509,8 @@
         animation: fadeInUp 0.6s ease forwards 1s;
     }
 
-    /* =============================================
-   SECCIÓN: SOBRE MÍ
+/* =============================================
+    SECCIÓN: SOBRE MÍ
 ============================================= */
     .about {
         padding-block: var(--space-24);
@@ -568,7 +568,7 @@
 
     .project-card__header {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         gap: var(--space-4);
         margin-bottom: var(--space-4);
@@ -625,7 +625,8 @@
     /* Grid de iconos de habilidades */
     .skills__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); */
         gap: var(--space-4);
     }
 
@@ -643,6 +644,7 @@
             transform var(--transition-base),
             background-color var(--transition-base);
         text-align: center;
+        justify-content: center;
     }
 
     .skill-item:hover {
@@ -660,10 +662,6 @@
         font-size: var(--text-xs);
         font-weight: 600;
         color: var(--color-text);
-    }
-
-    .skill-item__badge {
-        margin-top: var(--space-1);
     }
 
 /* =============================================
@@ -739,7 +737,19 @@
         .projects__grid {
             grid-template-columns: 1fr 1fr;
         }
+
+        .skills__grid {
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        /* .skills__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: var(--space-4);
+        } */
     }
+
+    
 
 /* =============================================
     RESPONSIVE — DESKTOP (≥ 768px)
