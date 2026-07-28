@@ -64,9 +64,9 @@
         --transition-base: 250ms ease;
     }
 
-    /* =============================================
-   TOKENS MODO OSCURO
-   Se activan cuando <html data-theme="dark">
+/* =============================================
+    TOKENS MODO OSCURO
+    Se activan cuando <html data-theme="dark">
 ============================================= */
     [data-theme="dark"] {
         --color-bg: #0F0E13;
@@ -82,8 +82,8 @@
         --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
-    /* =============================================
-   RESET Y BASE
+/* =============================================
+    RESET Y BASE
 ============================================= */
     *,
     *::before,
@@ -133,8 +133,8 @@
         list-style: none;
     }
 
-    /* =============================================
-   UTILIDADES GLOBALES
+/* =============================================
+    UTILIDADES GLOBALES
 ============================================= */
 
     /* Contenedor centrado con padding lateral */
@@ -158,9 +158,9 @@
         border: 0;
     }
 
-    /* =============================================
-   COMPONENTE: BADGE
-   Etiquetas de estado (En desarrollo, Aprendiendo)
+/* =============================================
+    COMPONENTE: BADGE
+    Etiquetas de estado (En desarrollo, Aprendiendo)
 ============================================= */
     .badge {
         display: inline-flex;
@@ -190,8 +190,8 @@
         color: #FCD34D;
     }
 
-    /* =============================================
-   COMPONENTE: BOTÓN
+/* =============================================
+    COMPONENTE: BOTÓN
 ============================================= */
     .btn {
         display: inline-flex;
@@ -259,8 +259,8 @@
         background-color: var(--color-bg-secondary);
     }
 
-    /* =============================================
-   ENCABEZADOS DE SECCIÓN
+/* =============================================
+    ENCABEZADOS DE SECCIÓN
 ============================================= */
     .section-header {
         margin-bottom: var(--space-12);
@@ -285,10 +285,10 @@
         color: var(--color-text);
     }
 
-    /* =============================================
-   NAVBAR
-   Navegación principal fija en la parte superior.
-   BEM: .navbar, .navbar__container, .navbar__logo,
+/* =============================================
+    NAVBAR
+    Navegación principal fija en la parte superior.
+    BEM: .navbar, .navbar__container, .navbar__logo,
         .navbar__actions, .navbar__links
 ============================================= */
     .navbar {
@@ -613,8 +613,8 @@
         gap: var(--space-3);
     }
 
-    /* =============================================
-   SECCIÓN: HABILIDADES
+/* =============================================
+    SECCIÓN: HABILIDADES
 ============================================= */
     .skills {
         padding-block: var(--space-24);
@@ -666,8 +666,8 @@
         margin-top: var(--space-1);
     }
 
-    /* =============================================
-   FOOTER
+/* =============================================
+    FOOTER
 ============================================= */
     .footer {
         border-top: 1px solid var(--color-border);
@@ -704,8 +704,8 @@
         color: var(--color-accent);
     }
 
-    /* =============================================
-   ANIMACIONES
+/* =============================================
+    ANIMACIONES
 ============================================= */
 
     /* Entrada desde abajo con opacidad */
@@ -732,8 +732,8 @@
         }
     }
 
-    /* =============================================
-   RESPONSIVE — TABLET (≥ 640px)
+/* =============================================
+    RESPONSIVE — TABLET (≥ 640px)
 ============================================= */
     @media (min-width: 640px) {
         .projects__grid {
@@ -741,8 +741,8 @@
         }
     }
 
-    /* =============================================
-   RESPONSIVE — DESKTOP (≥ 768px)
+/* =============================================
+    RESPONSIVE — DESKTOP (≥ 768px)
 ============================================= */
     @media (min-width: 768px) {
         .navbar__links {

@@ -18,12 +18,11 @@
     <!-- =============================================
         DEVICONS — iconos de tecnologías
     ============================================= -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-
     <!-- =============================================
         NAVBAR
         Contiene: logo/nombre, links de navegación,
@@ -69,7 +68,7 @@
 
                 <!-- CV descargable -->
                 <!-- TODO: Reemplazar href con la ruta real al archivo PDF del CV -->
-                <a href="#" download class="btn btn--outline" aria-label="Descargar CV en PDF">
+                <a href="" download class="btn btn--outline" aria-label="Descargar CV en PDF">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
@@ -200,7 +199,6 @@
                 </div>
 
                 <div class="projects__grid">
-
                     <!-- Proyecto 1: Lista de tareas -->
                     <article class="project-card" aria-labelledby="project-1-title">
                         <div class="project-card__header">
@@ -217,12 +215,12 @@
                         </ul>
                         <div class="project-card__links">
                             <!-- TODO: Reemplazar # con la URL real de la demo -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"
+                            <a href="https://aemete8.github.io/Lista-de-tareas-To-Do-/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"
                                 aria-label="Ver demo de Lista de Tareas (abre en nueva pestaña)">
                                 Demo
                             </a>
                             <!-- TODO: Reemplazar # con la URL real del repositorio -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
+                            <a href="https://github.com/Aemete8/Lista-de-tareas-To-Do-" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
                                 aria-label="Ver código de Lista de Tareas en GitHub (abre en nueva pestaña)">
                                 Repositorio
                             </a>
@@ -245,12 +243,11 @@
                         </ul>
                         <div class="project-card__links">
                             <!-- TODO: Reemplazar # con la URL real de la demo -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"
+                            <a href="https://aemete8.github.io/Calculadora-de-propinas/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"
                                 aria-label="Ver demo de Calculadora de Propinas (abre en nueva pestaña)">
                                 Demo
                             </a>
-                            <!-- TODO: Reemplazar # con la URL real del repositorio -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
+                            <a href="https://github.com/Aemete8/Calculadora-de-propinas" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
                                 aria-label="Ver código de Calculadora de Propinas en GitHub (abre en nueva pestaña)">
                                 Repositorio
                             </a>
@@ -274,14 +271,17 @@
                             <li class="project-card__tech">JavaScript</li>
                         </ul>
                         <div class="project-card__links">
-                            <!-- TODO: Reemplazar # con la URL real del repositorio cuando esté disponible -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
+                            <!-- TODO: Habilitar cuando la demo este disponible -->
+                            <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"
+                                aria-label="Ver demo de Bloc de Notas Markdown (abre en nueva pestaña)">
+                                Demo
+                            </a> -->
+                            <a href="https://github.com/Aemete8/Notas-Markdown" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm"
                                 aria-label="Ver código de Bloc de Notas Markdown en GitHub (abre en nueva pestaña)">
                                 Repositorio
                             </a>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
@@ -330,6 +330,13 @@
                         <span class="skill-item__name">GitHub</span>
                     </li>
 
+                    <!-- Figma -->
+                    <li class="skill-item">
+                        <!-- <i class="devicon-figma-plain colored skill-item__icon" aria-hidden="true"></i> -->
+                        <img width="32px" height="32px" class="skill-item__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"/>
+                        <span class="skill-item__name">Figma</span>
+                    </li>
+
                     <!-- Mobile First: no tiene ícono en devicon, uso representación visual -->
                     <li class="skill-item">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -350,26 +357,10 @@
                         </span>
                     </li>
 
-                    <!-- Figma — Aprendiendo -->
-                    <li class="skill-item">
-                        <i class="devicon-figma-plain colored skill-item__icon" aria-hidden="true"></i>
-                        <span class="skill-item__name">Figma</span>
-                        <span class="skill-item__badge">
-                            <span class="badge badge--learning" aria-label="Actualmente aprendiendo">Aprendiendo</span>
-                        </span>
-                    </li>
-
                     <!-- Framework JS — Por definir, Aprendiendo -->
-                    <!-- TODO: Reemplazar el ícono y nombre cuando elijas el framework (ej: React) -->
                     <li class="skill-item">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
-                            style="color: var(--color-accent)">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                            <polyline points="2 17 12 22 22 17" />
-                            <polyline points="2 12 12 17 22 12" />
-                        </svg>
-                        <span class="skill-item__name">JS Framework</span>
+                        <i class="devicon-react-original colored skill-item__icon" aria-hidden="true"></i>
+                        <span class="skill-item__name">React</span>
                         <span class="skill-item__badge">
                             <span class="badge badge--learning" aria-label="Próximamente">Aprendiendo</span>
                         </span>

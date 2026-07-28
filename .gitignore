@@ -1,4 +1,58 @@
+# =============================================
+# SISTEMA OPERATIVO
+# =============================================
+
+# macOS
 .DS_Store
-node_modules/
-*.log
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Windows
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =============================================
+# EDITORES E IDEs
+# =============================================
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains (WebStorm, etc.)
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*.swo
+.#*
+\#*\#
+
+# =============================================
+# ARCHIVOS PERSONALES / SENSIBLES
+# =============================================
+
+# Variables de entorno (por si algún día usas scripts con claves)
 .env
+.env.local
+.env.*
+
+# Notas personales
+notes.md
+TODO.md
+
+# =============================================
+# MISCELÁNEOS
+# =============================================
+
+# Logs
+*.log
+
+# Carpetas temporales
+tmp/
+temp/
