@@ -98,6 +98,11 @@
         font-size: 16px;
     }
 
+    /* Red de seguridad: evita scroll horizontal ante cualquier desborde puntual */
+    html, body {
+        overflow-x: hidden;
+    }
+
     /* Respeta la preferencia de reducción de movimiento */
     @media (prefers-reduced-motion: reduce) {
 
@@ -246,8 +251,14 @@
     }
 
     /* Botón icono (solo icono, sin texto) */
+    /* Mobile first: sin padding extra, tamaño ajustado al ícono */
     .btn--icon {
-        padding: var(--space-2);
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         background: transparent;
         border-color: transparent;
         color: var(--color-text-muted);
@@ -257,6 +268,11 @@
     .btn--icon:hover {
         color: var(--color-text);
         background-color: var(--color-bg-secondary);
+    }
+
+    /* Texto del botón de CV: oculto en mobile, solo se ve el ícono */
+    .btn__label {
+        display: none;
     }
 
 /* =============================================
@@ -307,20 +323,29 @@
         background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
     }
 
+    /* Mobile first: alto flexible (min-height) para permitir que el logo
+       baje a 2 líneas en pantallas angostas sin recortarse */
     .navbar__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 64px;
+        min-height: 64px;
+        padding-block: var(--space-2);
+        gap: var(--space-2);
     }
 
-    /* Logo: nombre del desarrollador */
+    /* Logo: nombre del desarrollador.
+       Mobile first: se le permite ocupar 2 líneas (sin nowrap/ellipsis)
+       y se reduce el tamaño para que quepa cómodo. */
     .navbar__logo {
         font-family: var(--font-display);
-        font-size: var(--text-lg);
+        font-size: var(--text-sm);
         font-weight: 700;
         color: var(--color-text);
         letter-spacing: -0.02em;
+        line-height: 1.15;
+        flex: 1 1 auto;
+        min-width: 0;
         transition: color var(--transition-fast);
     }
 
@@ -328,11 +353,13 @@
         color: var(--color-accent);
     }
 
-    /* Grupo derecho: links externos + theme toggle */
+    /* Grupo derecho: links externos + theme toggle.
+       Mobile first: gap reducido y no se encoge (los íconos ya están compactos) */
     .navbar__actions {
         display: flex;
         align-items: center;
-        gap: var(--space-2);
+        gap: var(--space-1);
+        flex-shrink: 0;
     }
 
     /* Links de navegación interna (desktop) */
@@ -359,12 +386,20 @@
         background-color: var(--color-bg-secondary);
     }
 
-    /* Separador visual entre links internos y externos */
+    /* Separador visual entre links internos y externos.
+       Mobile first: oculto mientras el espacio es limitado */
     .navbar__divider {
         width: 1px;
         height: 20px;
         background-color: var(--color-border);
         margin-inline: var(--space-2);
+        display: none;
+    }
+
+    /* Botón de CV: en mobile usa poco padding y no se encoge */
+    .navbar__actions .btn--outline {
+        padding: var(--space-2);
+        flex-shrink: 0;
     }
 
     /* Icono SVG dentro de botones del navbar */
@@ -427,12 +462,12 @@
     Primera sección visible, con animación typewriter
     en el nombre y tagline.
 ============================================= */
+    /* Mobile first: más padding-top por si el navbar crece a 2 líneas */
     .hero {
         min-height: 100svh;
         display: flex;
         align-items: center;
-        padding-top: 64px;
-        /* Compensa la altura del navbar */
+        padding-top: 88px;
     }
 
     .hero__container {
@@ -453,7 +488,7 @@
 
     .hero__title {
         font-family: var(--font-display);
-        font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl));
+        font-size: clamp(1.5rem, 8vw, var(--text-5xl));
         font-weight: 700;
         line-height: 1.1;
         letter-spacing: -0.03em;
@@ -463,11 +498,11 @@
         animation: fadeInUp 0.6s ease forwards 0.4s;
     }
 
-    /* Nombre con subrayado animado en púrpura */
+    /* Nombre con subrayado animado en púrpura.
+       Mobile first: sin nowrap, puede bajar a 2 líneas como en el navbar */
     .hero__name {
         position: relative;
         display: inline-block;
-        white-space: nowrap;
     }
 
     .hero__name::after {
@@ -622,12 +657,14 @@
         transition: background-color var(--transition-base);
     }
 
-    /* Grid de iconos de habilidades */
+    /* Grid de iconos de habilidades.
+       Mobile first: 3x3 fluido con minmax(0, 1fr) para que nunca
+       fuerce un ancho mínimo que genere scroll horizontal */
     .skills__grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: repeat(3, auto);
-        gap: var(--space-4);
+        gap: var(--space-3);
     }
 
     /* Tarjeta individual de habilidad */
@@ -734,22 +771,43 @@
     RESPONSIVE — TABLET (≥ 640px)
 ============================================= */
     @media (min-width: 640px) {
+        .hero {
+            padding-top: 64px; /* el logo ya entra en 1 línea, vuelve al valor original */
+        }
+
+        .navbar__logo {
+            font-size: var(--text-lg); /* tamaño original con más espacio disponible */
+        }
+
+        .navbar__actions {
+            gap: var(--space-2); /* gap original */
+        }
+
+        .navbar__actions .btn--outline {
+            padding: var(--space-3) var(--space-5); /* padding original del botón de CV */
+        }
+
+        .btn--icon {
+            padding: var(--space-2); /* padding original de los botones ícono */
+            width: auto;
+            height: auto;
+        }
+
+        .btn__label {
+            display: inline; /* se muestra el texto "CV" junto al ícono */
+        }
+
         .projects__grid {
             grid-template-columns: 1fr 1fr;
         }
 
         .skills__grid {
             grid-template-columns: repeat(3,1fr);
+            gap: var(--space-4); /* gap original con más espacio */
         }
-
-        /* .skills__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: var(--space-4);
-        } */
     }
 
-    
+
 
 /* =============================================
     RESPONSIVE — DESKTOP (≥ 768px)
@@ -757,6 +815,10 @@
     @media (min-width: 768px) {
         .navbar__links {
             display: flex;
+        }
+
+        .navbar__divider {
+            display: block; /* aparece junto con los links internos */
         }
 
         .about__grid {
