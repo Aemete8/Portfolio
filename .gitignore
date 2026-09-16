@@ -56,3 +56,5 @@ TODO.md
 # Carpetas temporales
 tmp/
 temp/
+
+node_modules/

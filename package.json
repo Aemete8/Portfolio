@@ -1,0 +1,27 @@
+{
+    "name": "mi-portafolio",
+    "version": "1.0.0",
+    "description": "Portafolio personal como Desarrollador Frontend. Construido con HTML, Tailwind css y JavaScript vanilla.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
+        "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Aemete8/Portfolio.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/Aemete8/Portfolio/issues"
+    },
+    "homepage": "https://github.com/Aemete8/Portfolio#readme",
+    "dependencies": {
+        "@tailwindcss/cli": "^4.3.3",
+        "tailwindcss": "^4.3.3"
+    }
+}

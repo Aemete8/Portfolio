@@ -9,66 +9,13 @@
         />
         <meta name="author" content="Alejandro Martínez" />
         <title>Alejandro Martínez — Desarrollador Frontend</title>
-
-        <!-- =============================================
-        FUENTES
-        Space Grotesk: tipografía display con carácter técnico
-        Inter: tipografía body, legible y neutral
-    ============================================= -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
             rel="stylesheet"
         />
-
-        <!-- =============================================
-        TAILWIND CSS (Play CDN) + configuración custom
-        Si más adelante montas un build con npm, usa el
-        tailwind.config.js del repo en su lugar de este script.
-    ============================================= -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                darkMode: ["selector", '[data-theme="dark"]'],
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            display: ['"Space Grotesk"', "sans-serif"],
-                            body: ["Inter", "sans-serif"],
-                        },
-                        keyframes: {
-                            fadeInUp: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateY(16px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateY(0)",
-                                },
-                            },
-                            underlineReveal: {
-                                "0%": { width: "0%" },
-                                "100%": { width: "100%" },
-                            },
-                        },
-                        animation: {
-                            "fade-in-up": "fadeInUp 0.6s ease forwards",
-                            "underline-reveal":
-                                "underlineReveal 0.6s ease forwards 1.2s",
-                        },
-                    },
-                },
-            };
-        </script>
-
-        <!-- Estilos complementarios (ver comentario dentro del archivo) -->
         <link rel="stylesheet" href="./assets/css/styles.css" />
-
-        <!-- =============================================
-        DEVICONS — iconos de tecnologías
-    ============================================= -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
@@ -76,57 +23,50 @@
     </head>
 
     <body
-        class="font-body text-base leading-relaxed text-neutral-900 dark:text-neutral-50 bg-white dark:bg-neutral-950 transition-colors duration-250 antialiased"
+        class="font-body text-base leading-relaxed text-foreground bg-background transition-colors duration-250 antialiased"
     >
-        <!-- =============================================
-        NAVBAR
-    ============================================= -->
         <header
-            class="fixed top-0 inset-x-0 z-[100] bg-white/85 dark:bg-neutral-950/85 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-250"
+            class="fixed top-0 inset-x-0 z-[100] bg-background/85 backdrop-blur-md border-b border-border transition-colors duration-250"
             role="banner"
         >
             <div
                 class="max-w-[900px] mx-auto px-6 flex items-center justify-between min-h-16 py-2 gap-2"
             >
-                <!-- Logo: ancla al inicio de la página -->
                 <a
                     href="#inicio"
-                    class="font-display text-sm sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 tracking-tight leading-[1.15] flex-1 min-w-0 transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50"
+                    class="font-display text-sm sm:text-lg font-bold text-foreground tracking-tight leading-[1.15] flex-1 min-w-0 transition-colors duration-150 hover:text-foreground"
                     aria-label="Ir al inicio"
                 >
                     Alejandro Martínez
                 </a>
 
-                <!-- Navegación principal (visible en desktop) -->
                 <nav
                     class="hidden md:flex items-center gap-1"
                     aria-label="Navegación principal"
                 >
                     <a
                         href="#sobre-mi"
-                        class="font-display text-sm font-medium text-neutral-500 dark:text-neutral-400 px-3 py-2 rounded-md transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                        class="font-display text-sm font-medium text-muted-foreground px-3 py-2 rounded-md transition-colors duration-150 hover:text-foreground hover:bg-accent"
                         >Sobre mí</a
                     >
                     <a
                         href="#proyectos"
-                        class="font-display text-sm font-medium text-neutral-500 dark:text-neutral-400 px-3 py-2 rounded-md transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                        class="font-display text-sm font-medium text-muted-foreground px-3 py-2 rounded-md transition-colors duration-150 hover:text-foreground hover:bg-accent"
                         >Proyectos</a
                     >
                     <a
                         href="#habilidades"
-                        class="font-display text-sm font-medium text-neutral-500 dark:text-neutral-400 px-3 py-2 rounded-md transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                        class="font-display text-sm font-medium text-muted-foreground px-3 py-2 rounded-md transition-colors duration-150 hover:text-foreground hover:bg-accent"
                         >Habilidades</a
                     >
                 </nav>
 
-                <!-- Acciones: links externos + toggle de tema -->
                 <div class="flex items-center gap-1 flex-shrink-0">
-                    <!-- GitHub -->
                     <a
                         href="https://github.com/Aemete8"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="p-0 w-8 h-8 sm:w-auto sm:h-auto sm:p-2 inline-flex items-center justify-center bg-transparent border-2 border-transparent text-neutral-500 dark:text-neutral-400 rounded-md transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                        class="p-0 w-8 h-8 sm:w-auto sm:h-auto sm:p-2 inline-flex items-center justify-center bg-transparent border-2 border-transparent text-muted-foreground rounded-md transition-colors duration-150 hover:text-foreground hover:bg-accent"
                         aria-label="Ver perfil de GitHub (abre en nueva pestaña)"
                         title="GitHub"
                     >
@@ -142,12 +82,11 @@
                         </svg>
                     </a>
 
-                    <!-- LinkedIn -->
                     <a
                         href="https://www.linkedin.com/in/alejomartínez"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="p-0 w-8 h-8 sm:w-auto sm:h-auto sm:p-2 inline-flex items-center justify-center bg-transparent border-2 border-transparent text-neutral-500 dark:text-neutral-400 rounded-md transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                        class="p-0 w-8 h-8 sm:w-auto sm:h-auto sm:p-2 inline-flex items-center justify-center bg-transparent border-2 border-transparent text-muted-foreground rounded-md transition-colors duration-150 hover:text-foreground hover:bg-accent"
                         aria-label="Ver perfil de LinkedIn (abre en nueva pestaña)"
                         title="LinkedIn"
                     >
@@ -163,11 +102,10 @@
                         </svg>
                     </a>
 
-                    <!-- CV descargable -->
                     <a
                         href="assets/CV-alejandro-martinez.pdf"
                         download
-                        class="inline-flex items-center gap-2 p-2 sm:px-5 sm:py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none flex-shrink-0 bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-50 focus-visible:outline-offset-[3px] active:translate-y-px"
+                        class="inline-flex items-center gap-2 p-2 sm:px-5 sm:py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none flex-shrink-0 bg-transparent text-foreground border-border hover:border-primary hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-[3px] active:translate-y-px"
                         aria-label="Descargar CV en PDF"
                     >
                         <svg
@@ -188,21 +126,18 @@
                         <span class="hidden sm:inline">CV</span>
                     </a>
 
-                    <!-- Separador visual -->
                     <div
-                        class="hidden md:block w-px h-5 bg-neutral-200 dark:bg-neutral-800 mx-2"
+                        class="hidden md:block w-px h-5 bg-border mx-2"
                         aria-hidden="true"
                     ></div>
 
-                    <!-- Toggle de tema oscuro/claro -->
                     <button
-                        class="flex items-center justify-center w-9 h-9 border-none rounded-md bg-transparent text-neutral-500 dark:text-neutral-400 cursor-pointer transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-50 focus-visible:outline-offset-2"
+                        class="flex items-center justify-center w-9 h-9 border-none rounded-md bg-transparent text-muted-foreground cursor-pointer transition-colors duration-150 hover:text-foreground hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
                         id="theme-toggle"
                         aria-label="Cambiar tema"
                         title="Cambiar tema"
                         type="button"
                     >
-                        <!-- Icono sol: visible en modo oscuro (para cambiar a claro) -->
                         <svg
                             class="hidden dark:block w-[18px] h-[18px]"
                             viewBox="0 0 24 24"
@@ -223,7 +158,6 @@
                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                         </svg>
-                        <!-- Icono luna: visible en modo claro (para cambiar a oscuro) -->
                         <svg
                             class="block dark:hidden w-[18px] h-[18px]"
                             viewBox="0 0 24 24"
@@ -244,9 +178,6 @@
         </header>
 
         <main id="main-content">
-            <!-- =============================================
-        SECCIÓN: HERO
-    ============================================= -->
             <section
                 class="min-h-[100svh] flex items-center pt-[88px] sm:pt-16"
                 id="inicio"
@@ -254,29 +185,29 @@
             >
                 <div class="max-w-[900px] mx-auto px-6 py-24">
                     <p
-                        class="font-display text-sm font-semibold tracking-[0.1em] uppercase text-neutral-900 dark:text-neutral-50 mb-5 opacity-0 animate-fade-in-up [animation-delay:0.2s]"
+                        class="font-display text-sm font-semibold tracking-[0.1em] uppercase text-foreground mb-5 opacity-0 animate-fade-in-up [animation-delay:0.2s]"
                     >
                         Hola, soy
                     </p>
 
                     <h1
-                        class="font-display text-[clamp(1.5rem,8vw,3rem)] font-bold leading-[1.1] tracking-[-0.03em] text-neutral-900 dark:text-neutral-50 mb-4 opacity-0 animate-fade-in-up [animation-delay:0.4s]"
+                        class="font-display text-[clamp(1.5rem,8vw,3rem)] font-bold leading-[1.1] tracking-[-0.03em] text-foreground mb-4 opacity-0 animate-fade-in-up [animation-delay:0.4s]"
                         id="hero-title"
                     >
                         <span
-                            class="relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[3px] after:bg-neutral-900 dark:after:bg-neutral-50 after:rounded-full after:animate-underline-reveal"
+                            class="relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[3px] after:bg-primary after:rounded-full after:animate-underline-reveal"
                             >Alejandro Martínez</span
                         >
                     </h1>
 
                     <p
-                        class="font-display text-xl font-medium text-neutral-500 dark:text-neutral-400 mb-6 opacity-0 animate-fade-in-up [animation-delay:0.6s]"
+                        class="font-display text-xl font-medium text-muted-foreground mb-6 opacity-0 animate-fade-in-up [animation-delay:0.6s]"
                     >
                         Frontend Developer — React & Tailwind
                     </p>
 
                     <p
-                        class="text-lg text-neutral-500 dark:text-neutral-400 max-w-[520px] mb-10 opacity-0 animate-fade-in-up [animation-delay:0.8s]"
+                        class="text-lg text-muted-foreground max-w-[520px] mb-10 opacity-0 animate-fade-in-up [animation-delay:0.8s]"
                     >
                         Construyo interfaces web modernas y responsivas con
                         React y Tailwind.
@@ -287,7 +218,7 @@
                     >
                         <a
                             href="#proyectos"
-                            class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-50 focus-visible:outline-offset-[3px] active:translate-y-px"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-[3px] active:translate-y-px"
                         >
                             Ver proyectos
                             <svg
@@ -309,7 +240,7 @@
                             href="https://www.linkedin.com/in/alejomartínez"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-50 focus-visible:outline-offset-[3px] active:translate-y-px"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-[3px] active:translate-y-px"
                         >
                             Contáctame
                         </a>
@@ -317,11 +248,8 @@
                 </div>
             </section>
 
-            <!-- =============================================
-        SECCIÓN: SOBRE MÍ
-    ============================================= -->
             <section
-                class="py-24 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-250"
+                class="py-24 bg-secondary transition-colors duration-250"
                 id="sobre-mi"
                 aria-labelledby="about-title"
             >
@@ -329,11 +257,11 @@
                     <div>
                         <div class="mb-12">
                             <span
-                                class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-neutral-900 dark:text-neutral-50 mb-3"
+                                class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-foreground mb-3"
                                 >Quién soy</span
                             >
                             <h2
-                                class="font-display text-3xl font-bold leading-tight text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-3xl font-bold leading-tight text-foreground"
                                 id="about-title"
                             >
                                 Sobre mí
@@ -342,7 +270,7 @@
 
                         <div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 text-lg leading-[1.75]"
+                                class="text-muted-foreground text-lg leading-[1.75]"
                             >
                                 Frontend Developer con base sólida en React,
                                 JavaScript y Tailwind CSS. Construyo interfaces
@@ -358,9 +286,6 @@
                 </div>
             </section>
 
-            <!-- =============================================
-        SECCIÓN: PROYECTOS
-    ============================================= -->
             <section
                 class="py-24"
                 id="proyectos"
@@ -369,11 +294,11 @@
                 <div class="max-w-[900px] mx-auto px-6">
                     <div class="mb-12">
                         <span
-                            class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-neutral-900 dark:text-neutral-50 mb-3"
+                            class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-foreground mb-3"
                             >Lo que he construido</span
                         >
                         <h2
-                            class="font-display text-3xl font-bold leading-tight text-neutral-900 dark:text-neutral-50"
+                            class="font-display text-3xl font-bold leading-tight text-foreground"
                             id="projects-title"
                         >
                             Proyectos
@@ -381,23 +306,22 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Proyecto: CECI PLANTAS -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-ceci-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-bold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-bold text-foreground leading-snug"
                                     id="project-ceci-title"
                                 >
                                     Ceci Plantas E-commerce
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 E-commerce completo para negocio real — Tienda
                                 online desarrollada con React y Tailwind CSS.
@@ -410,59 +334,47 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     React
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     Tailwind
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     Next.js
                                 </li>
                             </ul>
                             <div class="flex gap-3">
-                                <!-- href="https://aemete8.github.io/Buscador-de-peliculas/"
-                                aria-label="Ver demo de buscador de películas (abre en nueva pestaña)" -->
                                 <a
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-center justify-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="flex items-center justify-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                 >
                                     En desarrollo
                                 </a>
-                                <!-- <a
-                                    href="https://github.com/Aemete8/Buscador-de-peliculas"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
-                                    aria-label="Ver código de buscador de películas en GitHub (abre en nueva pestaña)"
-                                >
-                                    Repositorio
-                                </a> -->
                             </div>
                         </article>
-                        <!-- Proyecto: Buscador de peliculas -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-quiz-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-semibold text-foreground leading-snug"
                                     id="project-quiz-title"
                                 >
                                     Buscador de películas
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 App que consume la API de OMDB para buscar
                                 películas en tiempo real. Manejo de fetch, JSON
@@ -473,17 +385,17 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     HTML
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     CSS
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     JavaScript
                                 </li>
@@ -493,7 +405,7 @@
                                     href="https://aemete8.github.io/Buscador-de-peliculas/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                     aria-label="Ver demo de buscador de películas (abre en nueva pestaña)"
                                 >
                                     Demo
@@ -502,7 +414,7 @@
                                     href="https://github.com/Aemete8/Buscador-de-peliculas"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground"
                                     aria-label="Ver código de buscador de películas en GitHub (abre en nueva pestaña)"
                                 >
                                     Repositorio
@@ -510,23 +422,22 @@
                             </div>
                         </article>
 
-                        <!-- Proyecto: Clon Airbnb -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-1-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-semibold text-foreground leading-snug"
                                     id="project-1-title"
                                 >
                                     Clon Airbnb
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 Clon de Airbnb con React y Tailwind — Interfaz
                                 de búsqueda y filtrado de alojamientos
@@ -538,23 +449,21 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     React
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     Tailwind
                                 </li>
                             </ul>
                             <div class="flex gap-3">
-                                <!-- href=""
-                                aria-label="" Agregar despues -->
                                 <a
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                 >
                                     En desarrollo
                                 </a>
@@ -562,7 +471,7 @@
                                     href="https://github.com/Aemete8/Clon-Airbnb"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground"
                                     aria-label="Ver código de Clon Airbnb en GitHub (abre en nueva pestaña)"
                                 >
                                     Repositorio
@@ -570,23 +479,22 @@
                             </div>
                         </article>
 
-                        <!-- Proyecto: Bloc de notas Markdown -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-3-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-semibold text-foreground leading-snug"
                                     id="project-3-title"
                                 >
                                     Bloc de Notas Markdown
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 Editor de notas web con soporte para sintaxis
                                 Markdown. Renderiza el texto en tiempo real y
@@ -597,17 +505,17 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     HTML
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     CSS
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     JavaScript
                                 </li>
@@ -617,7 +525,7 @@
                                     href="https://aemete8.github.io/Notas-Markdown/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                     aria-label="Ver demo de Bloc de Notas Markdown (abre en nueva pestaña)"
                                 >
                                     Demo
@@ -626,7 +534,7 @@
                                     href="https://github.com/Aemete8/Notas-Markdown"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground"
                                     aria-label="Ver código de Bloc de Notas Markdown en GitHub (abre en nueva pestaña)"
                                 >
                                     Repositorio
@@ -634,23 +542,22 @@
                             </div>
                         </article>
 
-                        <!-- Proyecto: Lista de tareas -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-1-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-semibold text-foreground leading-snug"
                                     id="project-1-title"
                                 >
                                     Lista de Tareas
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 Aplicación para gestionar tareas del día a día.
                                 Permite agregar, completar y eliminar tareas,
@@ -662,17 +569,17 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     HTML
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     CSS
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     JavaScript
                                 </li>
@@ -682,7 +589,7 @@
                                     href="https://aemete8.github.io/Lista-de-tareas-To-Do-/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                     aria-label="Ver demo de Lista de Tareas (abre en nueva pestaña)"
                                 >
                                     Demo
@@ -691,7 +598,7 @@
                                     href="https://github.com/Aemete8/Lista-de-tareas-To-Do-"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground"
                                     aria-label="Ver código de Lista de Tareas en GitHub (abre en nueva pestaña)"
                                 >
                                     Repositorio
@@ -699,23 +606,22 @@
                             </div>
                         </article>
 
-                        <!-- Proyecto: Quiz JS -->
                         <article
-                            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 transition-all duration-250 hover:border-neutral-900 dark:hover:border-neutral-50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+                            class="bg-card border border-border rounded-2xl p-8 transition-all duration-250 hover:border-primary hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
                             aria-labelledby="project-quiz-title"
                         >
                             <div
                                 class="flex items-center justify-between gap-4 mb-4"
                             >
                                 <h3
-                                    class="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-50 leading-snug"
+                                    class="font-display text-xl font-semibold text-foreground leading-snug"
                                     id="project-quiz-title"
                                 >
                                     Quiz JavaScript
                                 </h3>
                             </div>
                             <p
-                                class="text-neutral-500 dark:text-neutral-400 leading-[1.7] mb-6"
+                                class="text-muted-foreground leading-[1.7] mb-6"
                             >
                                 Pon a prueba tus conocimientos de JS con 10
                                 preguntas cronometradas. Incluye resumen de
@@ -727,17 +633,17 @@
                                 aria-label="Tecnologías utilizadas"
                             >
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     HTML
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     CSS
                                 </li>
                                 <li
-                                    class="font-display text-xs font-semibold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full"
+                                    class="font-display text-xs font-semibold text-accent-foreground bg-accent px-3 py-1 rounded-full"
                                 >
                                     JavaScript
                                 </li>
@@ -747,7 +653,7 @@
                                     href="https://aemete8.github.io/Quiz-JavaScript/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-50 hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:border-neutral-800 dark:hover:border-neutral-200"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:border-primary/90"
                                     aria-label="Ver demo de Quiz de JavaScript (abre en nueva pestaña)"
                                 >
                                     Demo
@@ -756,7 +662,7 @@
                                     href="https://github.com/Aemete8/Quiz-JavaScript"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-50 hover:text-neutral-900 dark:hover:text-neutral-50"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold cursor-pointer transition-colors duration-150 border-2 leading-none bg-transparent text-foreground border-border hover:border-primary hover:text-foreground"
                                     aria-label="Ver código de Quiz de JavaScript en GitHub (abre en nueva pestaña)"
                                 >
                                     Repositorio
@@ -767,22 +673,19 @@
                 </div>
             </section>
 
-            <!-- =============================================
-        SECCIÓN: HABILIDADES
-    ============================================= -->
             <section
-                class="py-24 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-250"
+                class="py-24 bg-secondary transition-colors duration-250"
                 id="habilidades"
                 aria-labelledby="skills-title"
             >
                 <div class="max-w-[900px] mx-auto px-6">
                     <div class="mb-12">
                         <span
-                            class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-neutral-900 dark:text-neutral-50 mb-3"
+                            class="inline-block font-display text-xs font-semibold tracking-[0.12em] uppercase text-foreground mb-3"
                             >Mi stack</span
                         >
                         <h2
-                            class="font-display text-3xl font-bold leading-tight text-neutral-900 dark:text-neutral-50"
+                            class="font-display text-3xl font-bold leading-tight text-foreground"
                             id="skills-title"
                         >
                             Habilidades
@@ -794,126 +697,108 @@
                         aria-label="Lista de habilidades técnicas"
                     >
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-html5-plain colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >HTML</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-css3-plain colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >CSS</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-javascript-plain colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >JavaScript</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-git-plain colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >Git</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-github-original text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >GitHub</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-tailwindcss-plain colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >Tailwind</span
                             >
                         </li>
 
                         <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
+                            class="flex flex-col items-center gap-3 py-5 px-4 bg-card border border-border rounded-xl transition-all duration-250 text-center justify-center hover:border-primary hover:-translate-y-[3px]"
                         >
                             <i
                                 class="devicon-react-original colored text-[2rem] leading-none"
                                 aria-hidden="true"
                             ></i>
                             <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
+                                class="font-display text-xs font-semibold text-foreground"
                                 >React</span
                             >
                         </li>
-
-                        <!-- <li
-                            class="flex flex-col items-center gap-3 py-5 px-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl transition-all duration-250 text-center justify-center hover:border-neutral-900 dark:hover:border-neutral-50 hover:-translate-y-[3px]"
-                        >
-                            <img
-                                width="32px"
-                                height="32px"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-                            />
-
-                            <span
-                                class="font-display text-xs font-semibold text-neutral-900 dark:text-neutral-50"
-                                >Next.js</span
-                            >
-                        </li> -->
                     </ul>
                 </div>
             </section>
         </main>
 
-        <!-- =============================================
-    FOOTER
-============================================= -->
         <footer
-            class="border-t border-neutral-200 dark:border-neutral-800 py-8 transition-colors duration-250"
+            class="border-t border-border py-8 transition-colors duration-250"
             role="contentinfo"
         >
             <div
                 class="max-w-[900px] mx-auto px-6 flex flex-col md:flex-row items-center md:justify-between gap-4 text-center md:text-left"
             >
-                <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                <p class="text-sm text-muted-foreground">
                     &copy; <span id="footer-year"></span> Alejandro Martínez
                 </p>
                 <nav class="flex gap-4" aria-label="Links del footer">
@@ -921,7 +806,7 @@
                         href="mailto:brayanm531@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-sm font-medium text-neutral-500 dark:text-neutral-400 transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50"
+                        class="text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
                         aria-label="Correo electronico (abre en nueva pestaña)"
                     >
                         Brayanm531@gmail.com
@@ -930,7 +815,7 @@
                         href="https://github.com/Aemete8"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-sm font-medium text-neutral-500 dark:text-neutral-400 transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50"
+                        class="text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
                         aria-label="GitHub (abre en nueva pestaña)"
                     >
                         GitHub
@@ -939,7 +824,7 @@
                         href="https://www.linkedin.com/in/alejomartínez"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-sm font-medium text-neutral-500 dark:text-neutral-400 transition-colors duration-150 hover:text-neutral-900 dark:hover:text-neutral-50"
+                        class="text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
                         aria-label="LinkedIn (abre en nueva pestaña)"
                     >
                         LinkedIn
