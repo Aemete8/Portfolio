@@ -1,11 +1,8 @@
 # Portafolio — Alejandro Martínez
-
-Portafolio personal como Desarrollador Frontend Junior. Construido con HTML semántico, CSS y JavaScript vanilla, sin frameworks ni dependencias externas.
+Portafolio personal como Desarrollador Frontend. Construido con HTML, Tailwind css y JavaScript vanilla.
 
 ## 🚀 Demo
-
-<!-- TODO: Reemplazar con la URL real cuando esté desplegado -->
-[Ver portafolio en vivo](#https://github.com/Aemete8/Portfolio/deployments/github-pages)
+[Ver portafolio en vivo](https://aemete8.github.io/Portfolio/)
 
 ## 📁 Estructura del proyecto
 
@@ -13,19 +10,19 @@ Portafolio personal como Desarrollador Frontend Junior. Construido con HTML sem�
 portfolio/
 ├── index.html          # Estructura y contenido principal
 ├── README.md           # Este archivo
-└── assets/
-    └── cv.pdf          # CV descargable
-    └── css.pdf 
-        └── styles.css  # Estilos
-    └── js.pdf 
-        └── main.js     # Codigo JavaScript
+│── assets/             # CV descargable
+│   └── css 
+│        └── styles.css  # Estilos
+│   └── js
+│       └── main.js     # Codigo JavaScript
+└── cv.pdf 
 ```
 
 ## 🛠️ Tecnologías
 
-- **HTML5** semántico
-- **CSS3** con variables (custom properties) y metodología BEM
-- **JavaScript** vanilla (tema oscuro/claro, sin librerías)
+- **HTML5** semántico con roles y jerarquía accesible
+- **Tailwind CSS** para estilos utilitarios y diseño responsivo
+- **JavaScript** vanilla — tema oscuro/claro con persistencia en localStorage
 
 ## ✨ Características
 
@@ -35,19 +32,6 @@ portfolio/
 - Accesibilidad: ARIA labels, foco visible, `prefers-reduced-motion`
 - HTML semántico con roles y jerarquía correcta
 - Sin frameworks, sin dependencias
-
-<!-- ## 📋 Pendientes
-
-- [ ] Agregar CV en PDF en `assets/cv.pdf` -->
-
-
-<!-- ## 🚢 Despliegue
-
-El proyecto es un archivo HTML estático. Se puede desplegar en:
-
-- **GitHub Pages** — gratis, integrado con GitHub
-- **Netlify** — drag & drop del archivo o conexión con el repo
-- **Vercel** — conexión directa con el repositorio -->
 
 ## 📄 Licencia
 
